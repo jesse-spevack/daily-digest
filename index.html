@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daily Digest — Sun May 3, 2026</title>
+<meta name="description" content="A daily curated digest of articles, podcasts, and videos for Jesse.">
+<meta name="robots" content="noindex,nofollow">
+<style>
+  :root {
+    --bg: #fafafa; --fg: #1a1a1a; --muted: #6b6b6b; --rule: #e5e5e5;
+    --link: #0a66ff; --accent: #c9a227; --accent-bg: #fdf9eb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16161a; --fg: #e8e8ea; --muted: #888a90; --rule: #2a2a30;
+      --link: #6aa6ff; --accent: #d6b34a; --accent-bg: #2a2517;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: var(--bg); color: var(--fg);
+    padding: 32px 20px 64px; max-width: 720px; margin: 0 auto;
+  }
+  header { margin-bottom: 28px; }
+  .meta { color: var(--muted); font-size: 13px; margin: 0 0 6px; }
+  h1 { font-size: 28px; margin: 0 0 12px; letter-spacing: -0.01em; }
+  .lede { color: var(--fg); font-size: 15px; margin: 0; }
+  hr { border: none; border-top: 1px solid var(--rule); margin: 24px 0; }
+  .item { margin: 0 0 28px; }
+  .tag {
+    font-size: 11px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 4px;
+  }
+  .title {
+    font-size: 18px; font-weight: 600; line-height: 1.35;
+    color: var(--link); text-decoration: none;
+    display: inline-block; margin-bottom: 6px;
+  }
+  .title:hover { text-decoration: underline; }
+  .why { font-size: 14.5px; margin: 0 0 4px; }
+  .why b { font-weight: 600; }
+  .companion { font-size: 13px; color: var(--muted); margin: 0; }
+  .companion a { color: var(--link); }
+  .wildcard {
+    background: var(--accent-bg); border-left: 3px solid var(--accent);
+    border-radius: 4px; padding: 16px 18px; margin: 28px 0;
+  }
+  .wildcard .tag { color: var(--accent); font-weight: 600; }
+  footer {
+    color: var(--muted); font-size: 13px; margin-top: 48px;
+    padding-top: 20px; border-top: 1px solid var(--rule);
+  }
+  footer a { color: var(--link); }
+</style>
+</head>
+<body>
+<header>
+  <p class="meta">Sunday, May 3, 2026 · curated against <a href="https://notes.verynormal.dev" style="color:var(--link)">notes.verynormal.dev</a></p>
+  <h1>Daily Digest</h1>
+  <p class="lede">Heavy AI-capital-and-labor week. Anthropic chasing $900B while OpenAI's CFO publicly worries about the bill. Pentagon picks sides. Stripe ships the agentic stack. Plus your weekly Rails nudge, two AI-engineering reads, a Simon Willison hands-on, and one wildcard from the Pleistocene that you'll like for reasons unrelated to anything else here.</p>
+</header>
+
+<hr>
+
+<div class="item">
+  <div class="tag">1 · article · agentic commerce · Apr 30</div>
+  <a class="title" href="https://stripe.com/blog/agentic-commerce-suite">Stripe — Introducing the Agentic Commerce Suite</a>
+  <p class="why"><b>Why for you:</b> Direct follow-up to the Sessions videos you saved Friday. Spells out the full stack — Link wallet for AI agents, Issuing for agents, Shared Payment Tokens, Gemini integration. McKinsey's $5T-by-2030 framing.</p>
+  <p class="companion">Companion: <a href="https://techcrunch.com/2026/04/30/stripe-link-digital-wallet-ai-agents-shopping/">TechCrunch on the Link wallet OAuth flow</a>.</p>
+</div>
+
+<div class="item">
+  <div class="tag">2 · article · ai capital · Apr 29</div>
+  <a class="title" href="https://www.cnbc.com/2026/04/29/anthropic-weighs-raising-funds-at-900b-valuation-topping-openai.html">CNBC — Anthropic in talks at $900B valuation, topping OpenAI</a>
+  <p class="why"><b>Why for you:</b> The frontier-lab valuation order has flipped this week. Pair this with item 3 below — it reads best as a side-by-side.</p>
+</div>
+
+<div class="item">
+  <div class="tag">3 · article · ai capital · Apr 28</div>
+  <a class="title" href="https://fortune.com/2026/04/28/openai-cfo-sam-altman-missed-revenue-target/">Fortune — OpenAI CFO Sarah Friar reportedly at odds with Altman over missed revenue targets</a>
+  <p class="why"><b>Why for you:</b> The leaked tension between Friar and Altman is the cleanest version of the "does the unit economics work" question for the leading lab. Sharp counterweight to the Anthropic $900B story.</p>
+</div>
+
+<div class="item">
+  <div class="tag">4 · article · ai policy · May 1</div>
+  <a class="title" href="https://www.cnn.com/2026/05/01/tech/pentagon-ai-anthropic">CNN — Pentagon strikes AI deals with 7 Big Tech companies after shunning Anthropic</a>
+  <p class="why"><b>Why for you:</b> Defense angle on Anthropic's autonomous-weapons stance — concrete commercial consequences of safety positioning. Probably the most strategically interesting AI policy story of the week.</p>
+</div>
+
+<div class="item">
+  <div class="tag">5 · article · stratechery · Apr 28</div>
+  <a class="title" href="https://stratechery.com/2026/tim-cooks-impeccable-timing/">Ben Thompson — Tim Cook's Impeccable Timing</a>
+  <p class="why"><b>Why for you:</b> Ben Thompson on Cook's exit and what AI does (or doesn't) do to Apple. The two-paths framing — Apple either prints money on commoditized model devices or gets disrupted by the labs that did spend the hundreds of billions — is the kind of strategic choice he renders especially well.</p>
+</div>
+
+<div class="item">
+  <div class="tag">6 · article · rails (urgent) · May 1</div>
+  <a class="title" href="https://rubyonrails.org/2026/5/1/this-week-in-rails">This Week in Rails — May 1, 2026</a>
+  <p class="why"><b>Why for you:</b> js-notes is on Rails 8. Bug-fix support for the 8.0 line ends <b>this Thursday, May 7</b> — security-only after that. If you haven't bumped to 8.1.x, this is the nudge.</p>
+</div>
+
+<div class="item">
+  <div class="tag">7 · article · pragmatic engineer</div>
+  <a class="title" href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026">Pragmatic Engineer — The Impact of AI on Software Engineers in 2026</a>
+  <p class="why"><b>Why for you:</b> 900-respondent survey from a publication you save heavily. Spend data ($100–200/mo "max" plans become standard), 30% of devs hitting limits, the unbundling of AI-tool costs from employer to dev.</p>
+</div>
+
+<div class="item">
+  <div class="tag">8 · podcast · indie & growth</div>
+  <a class="title" href="https://www.lennysnewsletter.com/p/the-new-ai-growth-playbook-for-2026-elena-verna">Lenny's — Elena Verna on the new AI growth playbook (Lovable: $200M ARR / 100 ppl)</a>
+  <p class="why"><b>Why for you:</b> Closest thing to a microsaas/solopreneur playbook from a company that hit your "tiny team, huge ARR" thesis. The "innovation over optimization" point translates directly to a notes.verynormal.dev-sized op.</p>
+</div>
+
+<div class="item">
+  <div class="tag">9 · article · simon willison · May 1</div>
+  <a class="title" href="https://simonwillison.net/2026/May/1/inat-sightings/">Simon Willison — Tool: iNaturalist Sightings (built on his phone with Claude Code)</a>
+  <p class="why"><b>Why for you:</b> Vintage Willison: a tiny end-to-end build (Python CLI + git-scraping + JS frontend) shipped from his phone via Claude Code for web. Direct template for the kind of weekend hacking your js-notes work already resembles.</p>
+</div>
+
+<div class="item wildcard">
+  <div class="tag">10 · WILDCARD · paleoanthropology · Apr 27</div>
+  <a class="title" href="https://www.sciencedaily.com/releases/2026/04/260427050609.htm">Scientists think they finally know why Neanderthals vanished — and it wasn't climate or competition</a>
+  <p class="why"><b>Why for you (off your normal lanes):</b> Université de Montréal study uses spatial network modeling on Europe during MIS 3 and finds Neanderthal habitat patches were less <i>connected</i> than Homo sapiens'. The thesis — that survival came down to network topology, not climate or direct conflict — has real "interesting ideas" energy and maps surprisingly well to how distributed systems fail.</p>
+</div>
+
+<footer>
+  <p style="margin:0 0 6px">Curated by your Cowork agent. Tomorrow's run: Mon May 4 at 7am MT.</p>
+  <p style="margin:0">Past digests: <a href="archive/">archive</a></p>
+</footer>
+
+</body>
+</html>
