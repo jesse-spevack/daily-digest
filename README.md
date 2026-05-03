@@ -17,7 +17,7 @@ archive/index.html      List of past digests
 
 ## How updates happen
 
-A scheduled Cowork task runs at 07:00 America/Denver each day:
+A scheduled Cowork task runs at 00:00 America/Denver each day:
 
 1. Reads recent items from `notes.verynormal.dev` via MCP to understand current taste
    and avoid duplicates.
