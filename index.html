@@ -156,17 +156,17 @@
 <div class="wrap">
 
 <div class="topbar">
-  <span>~/digest/2026-05-03<span class="blink"></span></span>
+  <span>~/digest/2026-05-03 · refresh<span class="blink"></span></span>
   <span class="nav">
     <a href="archive/">archive</a>
     <a href="https://notes.verynormal.dev">notes</a>
   </span>
 </div>
 
-<p class="runhead">// daily-digest · sun 03 may 2026 · curated against notes.verynormal.dev</p>
-<h1 class="title">A heavy AI-capital-and-labor week, <em>plus a Pleistocene wildcard.</em></h1>
-<p class="lede">Anthropic chasing $900B while OpenAI's CFO publicly worries about the bill. Pentagon picks sides. Stripe ships the agentic stack. Plus your weekly Rails nudge, two AI-engineering reads, a Simon Willison hands-on, and one wildcard from the Pleistocene that you'll like for reasons unrelated to anything else here.</p>
-<p class="lede-sig">— curated for you, in 10 items.</p>
+<p class="runhead">// daily-digest · sun 03 may 2026 · evening refresh · last 48h focus</p>
+<h1 class="title">Anthropic shops for chips while OpenAI moves into AWS, <em>same week.</em></h1>
+<p class="lede">Two fresh frontier-lab supply-chain stories broke today: Anthropic is in early talks with a UK SRAM-on-die startup, and OpenAI just landed Codex inside Amazon Bedrock. Plus Ben Thompson on the Pentagon-Anthropic standoff, the weekly Rails nudge with a real deadline this Thursday, two AI-engineering reads, and a wildcard from a star a few hundred light-years away that turns out to have a hidden friend.</p>
+<p class="lede-sig">— refreshed for you, in 10 items.</p>
 
 <div class="index-rule">
   <span>idx</span>
@@ -177,46 +177,46 @@
 <article class="row">
   <div class="idx">[01]</div>
   <div>
-    <p class="meta-line">article · agentic commerce · apr 30</p>
-    <a class="headline" href="https://stripe.com/blog/agentic-commerce-suite">Stripe — Introducing the Agentic Commerce Suite</a>
-    <p class="why"><b>Why for you:</b> Direct follow-up to the Sessions videos you saved Friday. Spells out the full stack — Link wallet for AI agents, Issuing for agents, Shared Payment Tokens, Gemini integration. McKinsey's $5T-by-2030 framing.</p>
-    <p class="companion"><a href="https://techcrunch.com/2026/04/30/stripe-link-digital-wallet-ai-agents-shopping/">TechCrunch on the Link wallet OAuth flow</a></p>
+    <p class="meta-line">article · ai infrastructure · may 03</p>
+    <a class="headline" href="https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-in-early-talks-to-buy-inference-chips-from-uk-startup-fractile">Anthropic in early talks to buy DRAM-less inference chips from UK startup Fractile</a>
+    <p class="why"><b>Why for you:</b> A possible fourth supply track alongside Nvidia, Google, and Amazon. Fractile co-locates memory and compute on the same SRAM die, killing the DRAM trip. Won't ship until ~2027, but the procurement signal is the story — Amodei is buying optionality against the compute crunch you read about in his Stratechery TPU piece.</p>
   </div>
 </article>
 
 <article class="row">
   <div class="idx">[02]</div>
   <div>
-    <p class="meta-line">article · ai capital · apr 29</p>
-    <a class="headline" href="https://www.cnbc.com/2026/04/29/anthropic-weighs-raising-funds-at-900b-valuation-topping-openai.html">CNBC — Anthropic in talks at $900B valuation, topping OpenAI</a>
-    <p class="why"><b>Why for you:</b> The frontier-lab valuation order has flipped this week. Pair this with item 3 below — it reads best as a side-by-side.</p>
+    <p class="meta-line">article · openai · may 03</p>
+    <a class="headline" href="https://openai.com/index/openai-on-aws/">OpenAI — Models, Codex, and Managed Agents come to AWS</a>
+    <p class="why"><b>Why for you:</b> The Microsoft-OpenAI cloud exclusivity ended in late April; this is the first concrete what-comes-next. Codex now runs on Bedrock with AWS commit dollars, OpenAI agents land as a managed service. The hyperscaler-as-distribution story is now a three-horse race.</p>
   </div>
 </article>
 
 <article class="row">
   <div class="idx">[03]</div>
   <div>
-    <p class="meta-line">article · ai capital · apr 28</p>
-    <a class="headline" href="https://fortune.com/2026/04/28/openai-cfo-sam-altman-missed-revenue-target/">Fortune — OpenAI CFO Sarah Friar reportedly at odds with Altman over missed revenue targets</a>
-    <p class="why"><b>Why for you:</b> The leaked tension between Friar and Altman is the cleanest version of the "does the unit economics work" question for the leading lab. Sharp counterweight to the Anthropic $900B story.</p>
+    <p class="meta-line">article · ai policy · may 01</p>
+    <a class="headline" href="https://www.defensenews.com/news/pentagon-congress/2026/05/01/pentagon-freezes-out-anthropic-as-it-signs-deals-with-ai-rivals/">Defense News — Pentagon freezes out Anthropic as it signs deals with AI rivals</a>
+    <p class="why"><b>Why for you:</b> Defense-press read on the same Pentagon story your morning run flagged via CNN, but with the procurement-officer voice. Worth pairing with the CNBC follow-up that Mythos remains a separate, still-active line.</p>
+    <p class="companion"><a href="https://www.cnbc.com/2026/05/01/pentagon-anthropic-blacklist-mythos-michael.html">CNBC: Pentagon tech chief says Mythos is a separate issue</a></p>
   </div>
 </article>
 
 <article class="row">
   <div class="idx">[04]</div>
   <div>
-    <p class="meta-line">article · ai policy · may 01</p>
-    <a class="headline" href="https://www.cnn.com/2026/05/01/tech/pentagon-ai-anthropic">CNN — Pentagon strikes AI deals with 7 Big Tech companies after shunning Anthropic</a>
-    <p class="why"><b>Why for you:</b> Defense angle on Anthropic's autonomous-weapons stance — concrete commercial consequences of safety positioning. Probably the most strategically interesting AI policy story of the week.</p>
+    <p class="meta-line">article · stratechery · ben thompson</p>
+    <a class="headline" href="https://stratechery.com/2026/anthropic-and-alignment/">Stratechery — Anthropic and Alignment</a>
+    <p class="why"><b>Why for you:</b> Thompson's argument is uncomfortable but well-formed: Anthropic's "we won't let you use this" position effectively means an unelected San Francisco executive vetoes a democratically elected government. Reads as a direct counterweight to the safety-first framing in Amodei's blog post.</p>
   </div>
 </article>
 
 <article class="row">
   <div class="idx">[05]</div>
   <div>
-    <p class="meta-line">article · stratechery · apr 28</p>
-    <a class="headline" href="https://stratechery.com/2026/tim-cooks-impeccable-timing/">Ben Thompson — Tim Cook's Impeccable Timing</a>
-    <p class="why"><b>Why for you:</b> Ben Thompson on Cook's exit and what AI does (or doesn't) do to Apple. The two-paths framing — Apple either prints money on commoditized model devices or gets disrupted by the labs that did spend the hundreds of billions — is the kind of strategic choice he renders especially well.</p>
+    <p class="meta-line">article · anthropic · apr 28</p>
+    <a class="headline" href="https://www.anthropic.com/news/claude-for-creative-work">Anthropic — Claude for Creative Work (9 new connectors)</a>
+    <p class="why"><b>Why for you:</b> MCP connectors for Adobe Creative Cloud, Blender, Ableton Live, Autodesk Fusion, Splice, SketchUp, Affinity, Resolume Arena/Wire. The Blender one is most interesting — it can read whole scenes and add new tools to the Blender UI via the Python API. Also: Anthropic joined the Blender Development Fund as a Corporate Patron.</p>
   </div>
 </article>
 
@@ -225,43 +225,43 @@
   <div>
     <p class="meta-line">article · rails <span class="sep">·</span> <span class="urgent">URGENT</span> <span class="sep">·</span> may 01</p>
     <a class="headline" href="https://rubyonrails.org/2026/5/1/this-week-in-rails">This Week in Rails — May 1, 2026</a>
-    <p class="why"><b>Why for you:</b> js-notes is on Rails 8. Bug-fix support for the 8.0 line ends <b>this Thursday, May 7</b> — security-only after that. If you haven't bumped to 8.1.x, this is the nudge.</p>
+    <p class="why"><b>Why for you:</b> js-notes runs Rails 8. Bug-fix support for 8.0.x ends <b>Thursday May 7</b> — security-only after that. New apps now get a config/bootsnap.rb that turns on frozen string literals; worth checking whether yours has it.</p>
   </div>
 </article>
 
 <article class="row">
   <div class="idx">[07]</div>
   <div>
-    <p class="meta-line">article · pragmatic engineer</p>
-    <a class="headline" href="https://newsletter.pragmaticengineer.com/p/the-impact-of-ai-on-software-engineers-2026">Pragmatic Engineer — The Impact of AI on Software Engineers in 2026</a>
-    <p class="why"><b>Why for you:</b> 900-respondent survey from a publication you save heavily. Spend data ($100–200/mo "max" plans become standard), 30% of devs hitting limits, the unbundling of AI-tool costs from employer to dev.</p>
+    <p class="meta-line">article · simon willison · apr 30</p>
+    <a class="headline" href="https://simonwillison.net/2026/Apr/30/codex-goals/">Simon Willison — Codex CLI 0.128.0 adds /goal</a>
+    <p class="why"><b>Why for you:</b> OpenAI shipped their version of the Ralph loop: <code>/goal</code> keeps Codex iterating until either the goal is met or the token budget runs out. The implementation is two markdown prompts (continuation.md, budget_limit.md) injected at end-of-turn — a useful template if you ever want this in your own loop.</p>
   </div>
 </article>
 
 <article class="row">
   <div class="idx">[08]</div>
   <div>
-    <p class="meta-line">podcast · indie &amp; growth</p>
-    <a class="headline" href="https://www.lennysnewsletter.com/p/the-new-ai-growth-playbook-for-2026-elena-verna">Lenny's — Elena Verna on the new AI growth playbook (Lovable: $200M ARR / 100 ppl)</a>
-    <p class="why"><b>Why for you:</b> Closest thing to a microsaas/solopreneur playbook from a company that hit your "tiny team, huge ARR" thesis. The "innovation over optimization" point translates directly to a notes.verynormal.dev-sized op.</p>
+    <p class="meta-line">article · pragmatic engineer · apr 16</p>
+    <a class="headline" href="https://newsletter.pragmaticengineer.com/p/the-pulse-tokenmaxxing-as-a-weird?isFreemail=false&post_id=194426825&publication_id=458709&r=5fkgm&triedRedirect=true">Pragmatic Engineer — The Pulse: 'Tokenmaxxing' as a weird new trend</a>
+    <p class="why"><b>Why for you:</b> Already in your saved notes (#120) but worth surfacing again because the "agent subsidies are ending" thread is now playing out for real with the Bedrock / Pentagon stories above — same week, same arc.</p>
   </div>
 </article>
 
 <article class="row">
   <div class="idx">[09]</div>
   <div>
-    <p class="meta-line">article · simon willison · may 01</p>
-    <a class="headline" href="https://simonwillison.net/2026/May/1/inat-sightings/">Simon Willison — Tool: iNaturalist Sightings (built on his phone with Claude Code)</a>
-    <p class="why"><b>Why for you:</b> Vintage Willison: a tiny end-to-end build (Python CLI + git-scraping + JS frontend) shipped from his phone via Claude Code for web. Direct template for the kind of weekend hacking your js-notes work already resembles.</p>
+    <p class="meta-line">article · derek thompson · apr 30</p>
+    <a class="headline" href="https://www.derekthompson.org/p/why-do-richer-dads-spend-more-time">Derek Thompson — How American Dads Became the Parents Their Fathers Never Were</a>
+    <p class="why"><b>Why for you:</b> Already saved (#138) but flagging because it's the cleanest version of an essay you'll want to send to a few people. Higher-income dads doing more childcare than mid-century working-class moms — a flip with implications for kid outcomes, including the dyslexia/college prep tracks you care about.</p>
   </div>
 </article>
 
 <article class="row wildcard">
   <div class="idx">[10]</div>
   <div>
-    <p class="meta-line">[wildcard] · paleoanthropology · apr 27</p>
-    <a class="headline" href="https://www.sciencedaily.com/releases/2026/04/260427050609.htm">Scientists think they finally know why Neanderthals vanished — and it wasn't climate or competition</a>
-    <p class="why"><b>Why for you (off your normal lanes):</b> Université de Montréal study uses spatial network modeling on Europe during MIS 3 and finds Neanderthal habitat patches were less <i>connected</i> than Homo sapiens'. The thesis — that survival came down to network topology, not climate or direct conflict — has real "interesting ideas" energy and maps surprisingly well to how distributed systems fail.</p>
+    <p class="meta-line">[wildcard] · astrophysics · apr 30</p>
+    <a class="headline" href="https://www.sciencedaily.com/">ScienceDaily — Decades-old gamma-Cas X-ray mystery cracked: it has a hidden stellar companion</a>
+    <p class="why"><b>Why for you (off your normal lanes):</b> Gamma Cassiopeiae has been emitting hard X-rays nobody could explain since the 1970s. The answer turns out to be a small, unseen companion star feeding off it — a textbook case of "the data was always there, you needed the right interpretive frame." Resonant if you've spent any time staring at a chart wondering what you're missing.</p>
   </div>
 </article>
 
