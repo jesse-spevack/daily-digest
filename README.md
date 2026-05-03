@@ -1,10 +1,10 @@
 # daily-digest
 
 Static site that hosts a daily curated digest of articles, podcasts, and videos
-for [@jspevack](https://github.com/jspevack), generated each morning by a
+for [@jesse-spevack](https://github.com/jesse-spevack), generated each morning by a
 Cowork-mode scheduled task.
 
-Live: https://jspevack.github.io/daily-digest
+Live: https://jesse-spevack.github.io/daily-digest
 
 ## Layout
 
