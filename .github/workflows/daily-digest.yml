@@ -1,0 +1,60 @@
+name: Daily Digest
+
+on:
+  schedule:
+    # 13:00 UTC = 7:00 AM MDT (Mar–Nov). When the US switches to MST in November,
+    # change this to '0 14 * * *' or accept that runs slide to 6 AM.
+    - cron: '0 13 * * *'
+  # Allow manual runs from the Actions tab for testing.
+  workflow_dispatch:
+
+permissions:
+  # Needed so the default GITHUB_TOKEN can push the generated commit.
+  contents: write
+
+# Cancel a previous in-flight run if another starts.
+concurrency:
+  group: daily-digest
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # We need full history so the commit-and-push step can fast-forward.
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Generate today's digest
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          PROMPT="$(cat .github/digest-prompt.md)"
+          claude \
+            --print \
+            --permission-mode bypassPermissions \
+            --allowedTools "Read,Write,Edit,WebSearch,Bash" \
+            "$PROMPT"
+
+      - name: Commit and push
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name  "github-actions[bot]"
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "No changes produced — skipping commit."
+            exit 0
+          fi
+          git add -A
+          git commit -m "digest: $(TZ=America/Denver date +%F)"
+          git push
