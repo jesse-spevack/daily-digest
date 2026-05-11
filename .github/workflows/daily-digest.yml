@@ -40,12 +40,11 @@ jobs:
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
-          PROMPT="$(cat .github/digest-prompt.md)"
           claude \
             --print \
             --permission-mode bypassPermissions \
             --allowedTools "Read,Write,Edit,WebSearch,Bash" \
-            "$PROMPT"
+            < .github/digest-prompt.md
 
       - name: Commit and push
         run: |
