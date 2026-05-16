@@ -37,6 +37,23 @@ Lighter lane (only when something is genuinely fresh and strong):
 
 **Only verified URLs.** Never fabricate. If a category comes up empty, skip it and pick a stronger heavy-lane item.
 
+**Each item is exactly four fields: title, author, date, summary.** Nothing else. The summary is **one neutral sentence, ≤20 words** stating what the piece is — not why Jesse should care, not why it matters, not a hook. No "Why for you:" preamble. No `<b>` emphasis. No companion paragraph. No editorializing.
+
+Example of the right shape:
+
+```html
+<p class="meta-line">Ben Thompson · May 9</p>
+<a class="headline" href="https://stratechery.com/2026/earning-spending/">Earning &amp; Spending</a>
+<p class="why">Weekly column on the Anthropic–Google TPU deal and what 5 GW of compute reshapes about cloud economics.</p>
+```
+
+Counterexamples (do not do this):
+- `<b>Why for you:</b> …` — drop the bold preamble entirely.
+- "Prices the Google-as-Anthropic-landlord thesis at ~40% of cloud backlog." — too pitchy, takes a position.
+- "The most consequential consumer-AI launch this week." — clickbait framing.
+- Multi-sentence prose, no matter how short each sentence is.
+- `<p class="companion">…</p>` — no longer used; one item, one summary.
+
 ## Steps
 
 1. **Resolve today's date** in America/Denver: run `TZ=America/Denver date '+%A %B %-d %Y'` and `TZ=America/Denver date +%F` via Bash. Use those for the title, archive filename, and commit message.
@@ -52,13 +69,13 @@ Lighter lane (only when something is genuinely fresh and strong):
    - `Ruby on Rails this week`
    - Wildcard: `unusual interesting science finding [current month]` / `fascinating research published this week` / `surprising study new`
 
-4. **Pick 10.** Each item needs: title (verbatim), URL (verified from a search result, never invented), source type, publication date (within last 7 days), a one-line "Why for you" tied to his taste, and a 1–2 sentence blurb.
+4. **Pick 10.** Each item needs: title (verbatim), URL (verified from a search result, never invented), author or byline (publication name if no individual author — e.g. "TechCrunch", "AWS Blog"), publication date (within last 7 days), and one neutral sentence (≤20 words) describing the piece. If you can't find a real author, use the publication; never invent.
 
-5. **Read `index.html`** to copy the exact template structure (CSS, layout, footer pattern). Preserve:
+5. **Read `index.html`** to copy the exact template structure (CSS, layout, footer pattern). Use it for structure only — older entries in the file have a different blurb shape (long, opinionated, with `<b>Why for you:</b>` preambles); **ignore those** and follow the new format above. Preserve:
    - `<title>Daily Digest — [Day, Mon DD, YYYY]</title>`
-   - header with the `.runhead` line, `<h1 class="title">` (use the `<em>` second-half pattern), `.lede` paragraph (1 sentence describing the day's mix), `.lede-sig`
-   - 10 `<article class="row">` blocks, each with `.idx`, `.meta-line`, `<a class="headline">`, `<p class="why">`, optional `<p class="companion">`
-   - The wildcard uses `<article class="row wildcard">` with the same internals; meta-line starts `[wildcard] · [category] · [date]`
+   - header with the `.runhead` line, `<h1 class="title">` (use the `<em>` second-half pattern), `.lede` paragraph (1 neutral sentence describing the day's mix), `.lede-sig`
+   - 10 `<article class="row">` blocks, each with `.idx`, `.meta-line` (format: `[author] · [date]`), `<a class="headline">` (the verbatim title), `<p class="why">` (one neutral sentence summary, no `<b>` preamble, no companion paragraph)
+   - The wildcard uses `<article class="row wildcard">` with the same internals; meta-line is `[wildcard] · [author] · [date]`
    - Footer mentions the 7am MT next-run and links to `archive/`
 
 6. **Write the new `index.html`** in place.
@@ -77,7 +94,7 @@ Lighter lane (only when something is genuinely fresh and strong):
 
 ## Tone
 
-Direct, dry, slightly playful. No hype. No emojis. No "in this fast-paced world". Don't summarize each piece exhaustively — give just enough to decide whether to click.
+Neutral, factual. No hype. No emojis. No clickbait framing ("the most consequential", "you won't believe", "quietly"). No editorializing ("prices the thesis", "the picture you were assembling"). The summary describes the piece; the reader decides whether it's worth their time.
 
 ## Do not
 
