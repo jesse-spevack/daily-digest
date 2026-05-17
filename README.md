@@ -1,8 +1,8 @@
 # daily-digest
 
 Static site that hosts a daily curated digest of articles, podcasts, and videos
-for [@jesse-spevack](https://github.com/jesse-spevack), generated each morning by a
-Cowork-mode scheduled task.
+for [@jesse-spevack](https://github.com/jesse-spevack), generated each morning
+by a GitHub Actions workflow.
 
 Live: https://jesse-spevack.github.io/daily-digest
 
@@ -17,15 +17,19 @@ archive/index.html      List of past digests
 
 ## How updates happen
 
-A scheduled Cowork task runs at 00:00 America/Denver each day:
+`.github/workflows/daily-digest.yml` runs at 13:00 UTC each day (7am MDT;
+slides to 6am MST when the US drops DST). The workflow:
 
-1. Reads recent items from `notes.verynormal.dev` via MCP to understand current taste
-   and avoid duplicates.
-2. Searches the web for fresh content (last 48–72h preferred) across the heavy lane
-   (AI, tech business, engineering, microsaas, Rails) plus one wildcard.
-3. Writes the new `index.html` and `archive/YYYY-MM-DD.html`, regenerates
-   `archive/index.html`.
-4. Commits and pushes to `main`. GitHub Pages serves it.
+1. Installs the Claude Code CLI on a fresh runner.
+2. Pipes `.github/digest-prompt.md` into `claude --print` with Read, Write,
+   Edit, WebSearch, and Bash tools enabled.
+3. The model dedupes against the last 7 archive pages, web-searches for
+   fresh content, rewrites `index.html`, copies it to
+   `archive/YYYY-MM-DD.html`, and prepends a row to `archive/index.html`.
+4. A follow-up step commits the diff as `github-actions[bot]` and pushes
+   to `main`. GitHub Pages serves it.
+
+Manual runs: GitHub → Actions → **Daily Digest** → **Run workflow**.
 
 ## Manual rebuild
 
@@ -42,6 +46,6 @@ git push
 
 ## Tweaking the curation
 
-The digest content rules live in the scheduled task prompt managed by Cowork
-(task id `daily-interesting-digest`). Edit it from the Scheduled tab in the app,
-or ask Claude to update it.
+The prompt lives at [`.github/digest-prompt.md`](.github/digest-prompt.md).
+Edit it on a branch, open a PR, and the next scheduled run picks up the new
+behavior.
