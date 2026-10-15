@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daily Digest — Thursday, Oct 15, 2026</title>
+<meta name="description" content="A daily curated digest of articles, podcasts, and videos for Jesse.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  :root {
+    --bg: #fbfaf7; --fg: #111; --muted: #6b6b6b; --rule: #1a1a1a;
+    --thin: #d4d2cb; --link: #111; --link-hl: #2b5cd3;
+    --accent: #2b5cd3; --accent-bg: #eef2fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e0e10; --fg: #e8e6e0; --muted: #8b8a85; --rule: #e8e6e0;
+      --thin: #2a2a2e; --link: #e8e6e0; --link-hl: #82a7ff;
+      --accent: #82a7ff; --accent-bg: #16213a;
+    }
+  }
+  body {
+    background: var(--bg); color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+    font-family: "Lora", Georgia, serif;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  .topbar {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 12px; border-bottom: 1px solid var(--thin);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  .topbar .nav a {
+    color: var(--muted); text-decoration: none; margin-left: 14px;
+  }
+  .topbar .nav a:hover { color: var(--fg); text-decoration: underline; }
+  .topbar .blink {
+    display: inline-block; width: 7px; height: 13px;
+    background: var(--fg); margin-left: 2px; vertical-align: -2px;
+    animation: blink 1.1s steps(2, end) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .runhead {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    letter-spacing: 0.05em;
+    margin: 0 0 10px;
+  }
+  h1.title {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(36px, 6.5vw, 56px); line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 22px;
+    text-wrap: balance;
+  }
+  h1.title em { font-style: italic; font-weight: 400; color: var(--muted); }
+
+  .lede { font-size: 17px; line-height: 1.6; max-width: 62ch; margin: 0 0 8px; }
+  .lede-sig {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 0 0 48px; letter-spacing: 0.02em;
+  }
+
+  .index-rule {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--thin);
+    padding: 8px 0;
+    display: grid; grid-template-columns: 60px 1fr auto; gap: 16px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  article.row {
+    display: grid; grid-template-columns: 60px 1fr; gap: 0 16px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--thin);
+  }
+  .idx {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    padding-top: 6px; letter-spacing: 0.02em;
+  }
+  .meta-line {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted); letter-spacing: 0.04em;
+    margin: 0 0 6px; text-transform: uppercase;
+  }
+  .meta-line .sep { color: var(--thin); margin: 0 8px; }
+  .meta-line .urgent { color: var(--accent); font-weight: 600; }
+
+  a.headline {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500; font-size: 21px; line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--link); text-decoration: none;
+    display: inline-block; margin: 0 0 8px;
+    text-wrap: balance;
+  }
+  a.headline:hover {
+    text-decoration: underline; text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .why { font-size: 16px; line-height: 1.55; margin: 0; max-width: 60ch; }
+  .why b { font-weight: 600; }
+
+  .companion {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 8px 0 0; letter-spacing: 0.01em;
+  }
+  .companion::before { content: "↳ "; color: var(--thin); }
+  .companion a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  .companion a:hover { color: var(--accent); }
+
+  article.row.wildcard {
+    background: var(--accent-bg);
+    border-left: 2px solid var(--accent);
+    margin: 0 -16px; padding: 22px 16px;
+  }
+  article.row.wildcard .meta-line { color: var(--accent); font-weight: 600; }
+  article.row.wildcard .idx { color: var(--accent); }
+
+  footer.foot {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin-top: 56px; padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    letter-spacing: 0.01em;
+  }
+  footer.foot p { margin: 0 0 4px; }
+  footer.foot a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  footer.foot a:hover { color: var(--fg); }
+
+  @media (max-width: 540px) {
+    article.row { grid-template-columns: 40px 1fr; gap: 0 10px; }
+    .index-rule { grid-template-columns: 40px 1fr auto; }
+    a.headline { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <span>~/digest/2026-10-15 · refresh<span class="blink"></span></span>
+  <span class="nav">
+    <a href="../">archive</a>
+    <a href="https://notes.verynormal.dev">notes</a>
+  </span>
+</div>
+
+<p class="runhead">// daily-digest · thu 15 oct 2026 · morning refresh · last 72h focus</p>
+<h1 class="title">The FTC subpoenas OpenAI and Anthropic over AI safety incidents, as eight states separately sue OpenAI over ChatGPT and children. <em>Plus OpenAI and Anthropic back a $15M Simons Foundation math initiative, Google opens frontier models to 200 European researchers, Gergely Orosz goes inside Uber's AI infra, Noah Smith compares the AI buildout to 1870s railroads, RubyLLM ships a built-in MCP client, Stripe says agentic commerce is revving up, Sean Goedecke on not diagnosing your opponents, and a wildcard: Cornell finds Marfan syndrome in two long-legged cats.</em></h1>
+<p class="lede">Ten items on this week's AI regulatory reckoning, plus engineering, economics, and Ruby notes, closing with a genetic detour into cat siblings.</p>
+<p class="lede-sig">— refreshed for you, in 10 items.</p>
+
+<div class="index-rule">
+  <span>idx</span>
+  <span>title</span>
+  <span>type</span>
+</div>
+
+<article class="row">
+  <div class="idx">[01]</div>
+  <div>
+    <p class="meta-line">Axios · Oct 15</p>
+    <a class="headline" href="https://www.axios.com/2026/10/15/ftc-openai-anthropic-ai-safety-investigation">Scoop: FTC subpoenas OpenAI, Anthropic over consumer harms</a>
+    <p class="why">The FTC sent civil subpoenas to OpenAI and Anthropic seeking documents on safety incidents and marketing practices.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[02]</div>
+  <div>
+    <p class="meta-line">UPI · Oct 15</p>
+    <a class="headline" href="https://www.upi.com/Top_News/US/2026/10/15/states-sue-OpenAI-ChatGPT/5571792042846/">Eight states sue OpenAI over alleged dangers posed by ChatGPT</a>
+    <p class="why">Eight state attorneys general sued OpenAI, alleging ChatGPT gave children dangerous advice and encouraged self-harm.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[03]</div>
+  <div>
+    <p class="meta-line">OpenAI · Oct 15</p>
+    <a class="headline" href="https://openai.com/index/sharing-ai-progress-in-mathematics/">Sharing AI progress in mathematics</a>
+    <p class="why">OpenAI pledged $5 million to a Simons Foundation program helping mathematicians verify AI-generated proofs.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[04]</div>
+  <div>
+    <p class="meta-line">Maureen Costello, Google · Oct 14</p>
+    <a class="headline" href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/were-powering-european-scientific-discovery-with-advanced-ai-compute-and-frontier-models/">We're powering European scientific discovery with advanced AI compute and frontier models</a>
+    <p class="why">Google DeepMind and Google Cloud gave 200 European researchers access to frontier models and compute credits.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[05]</div>
+  <div>
+    <p class="meta-line">Carmine Paolino · Oct 8</p>
+    <a class="headline" href="https://paolino.me/rubyllm-2-1/">RubyLLM 2.1: MCP, Judgments, Evaluations, and Less Work on Every Call</a>
+    <p class="why">RubyLLM 2.1 shipped a built-in MCP client, typed judgments, and an agent evaluation framework.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[06]</div>
+  <div>
+    <p class="meta-line">Gergely Orosz, The Pragmatic Engineer · Oct 14</p>
+    <a class="headline" href="https://newsletter.pragmaticengineer.com/p/ubers-ai-infra-from-the-inside">Uber's AI infra, from the inside</a>
+    <p class="why">Gergely Orosz profiles how Uber builds internal AI tooling and measures its engineering productivity impact.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[07]</div>
+  <div>
+    <p class="meta-line">Noah Smith, Noahpinion · Oct 15</p>
+    <a class="headline" href="https://www.noahpinion.blog/p/ai-vs-the-railroads">AI vs. the railroads</a>
+    <p class="why">Noah Smith compares today's AI data-center buildout to the boom-and-bust cycle of 1870s railroads.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[08]</div>
+  <div>
+    <p class="meta-line">Sean Goedecke · Oct 11</p>
+    <a class="headline" href="https://www.seangoedecke.com/dont-diagnose-your-opponents/">Don't diagnose your opponents</a>
+    <p class="why">Sean Goedecke argues you should only question an opponent's motives alongside a substantive counterargument.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[09]</div>
+  <div>
+    <p class="meta-line">Payments Dive · Oct 15</p>
+    <a class="headline" href="https://www.paymentsdive.com/news/stripe-agentic-commerce-revs-up/833109/">Stripe agentic commerce revs up</a>
+    <p class="why">Stripe's John Collison said agentic commerce volume rose sharply in September after its Sessions launch.</p>
+  </div>
+</article>
+
+<article class="row wildcard">
+  <div class="idx">[10]</div>
+  <div>
+    <p class="meta-line">Wildcard · ScienceDaily · Oct 13</p>
+    <a class="headline" href="https://www.sciencedaily.com/releases/2026/10/261013015801.htm">Cornell scientists identify rare human genetic disorder in two unusually long-legged cats</a>
+    <p class="why">Cornell researchers found the first confirmed Marfan syndrome cases in two long-legged domestic cat siblings.</p>
+  </div>
+</article>
+
+<footer class="foot">
+  <p>$ next-run --interval daily --at "07:00 MT"</p>
+  <p>$ ls archive/ → <a href="archive/">past digests</a></p>
+</footer>
+
+</div>
+</body>
+</html>
