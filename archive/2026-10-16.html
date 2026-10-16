@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daily Digest — Friday, Oct 16, 2026</title>
+<meta name="description" content="A daily curated digest of articles, podcasts, and videos for Jesse.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  :root {
+    --bg: #fbfaf7; --fg: #111; --muted: #6b6b6b; --rule: #1a1a1a;
+    --thin: #d4d2cb; --link: #111; --link-hl: #2b5cd3;
+    --accent: #2b5cd3; --accent-bg: #eef2fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e0e10; --fg: #e8e6e0; --muted: #8b8a85; --rule: #e8e6e0;
+      --thin: #2a2a2e; --link: #e8e6e0; --link-hl: #82a7ff;
+      --accent: #82a7ff; --accent-bg: #16213a;
+    }
+  }
+  body {
+    background: var(--bg); color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+    font-family: "Lora", Georgia, serif;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  .topbar {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 12px; border-bottom: 1px solid var(--thin);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  .topbar .nav a {
+    color: var(--muted); text-decoration: none; margin-left: 14px;
+  }
+  .topbar .nav a:hover { color: var(--fg); text-decoration: underline; }
+  .topbar .blink {
+    display: inline-block; width: 7px; height: 13px;
+    background: var(--fg); margin-left: 2px; vertical-align: -2px;
+    animation: blink 1.1s steps(2, end) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .runhead {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    letter-spacing: 0.05em;
+    margin: 0 0 10px;
+  }
+  h1.title {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(36px, 6.5vw, 56px); line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 22px;
+    text-wrap: balance;
+  }
+  h1.title em { font-style: italic; font-weight: 400; color: var(--muted); }
+
+  .lede { font-size: 17px; line-height: 1.6; max-width: 62ch; margin: 0 0 8px; }
+  .lede-sig {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 0 0 48px; letter-spacing: 0.02em;
+  }
+
+  .index-rule {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--thin);
+    padding: 8px 0;
+    display: grid; grid-template-columns: 60px 1fr auto; gap: 16px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  article.row {
+    display: grid; grid-template-columns: 60px 1fr; gap: 0 16px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--thin);
+  }
+  .idx {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    padding-top: 6px; letter-spacing: 0.02em;
+  }
+  .meta-line {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted); letter-spacing: 0.04em;
+    margin: 0 0 6px; text-transform: uppercase;
+  }
+  .meta-line .sep { color: var(--thin); margin: 0 8px; }
+  .meta-line .urgent { color: var(--accent); font-weight: 600; }
+
+  a.headline {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500; font-size: 21px; line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--link); text-decoration: none;
+    display: inline-block; margin: 0 0 8px;
+    text-wrap: balance;
+  }
+  a.headline:hover {
+    text-decoration: underline; text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .why { font-size: 16px; line-height: 1.55; margin: 0; max-width: 60ch; }
+  .why b { font-weight: 600; }
+
+  .companion {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 8px 0 0; letter-spacing: 0.01em;
+  }
+  .companion::before { content: "↳ "; color: var(--thin); }
+  .companion a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  .companion a:hover { color: var(--accent); }
+
+  article.row.wildcard {
+    background: var(--accent-bg);
+    border-left: 2px solid var(--accent);
+    margin: 0 -16px; padding: 22px 16px;
+  }
+  article.row.wildcard .meta-line { color: var(--accent); font-weight: 600; }
+  article.row.wildcard .idx { color: var(--accent); }
+
+  footer.foot {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin-top: 56px; padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    letter-spacing: 0.01em;
+  }
+  footer.foot p { margin: 0 0 4px; }
+  footer.foot a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  footer.foot a:hover { color: var(--fg); }
+
+  @media (max-width: 540px) {
+    article.row { grid-template-columns: 40px 1fr; gap: 0 10px; }
+    .index-rule { grid-template-columns: 40px 1fr auto; }
+    a.headline { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <span>~/digest/2026-10-16 · refresh<span class="blink"></span></span>
+  <span class="nav">
+    <a href="../">archive</a>
+    <a href="https://notes.verynormal.dev">notes</a>
+  </span>
+</div>
+
+<p class="runhead">// daily-digest · fri 16 oct 2026 · morning refresh · last 72h focus</p>
+<h1 class="title">Wall Street starts pricing in AI's return-on-investment risk, while the Financial Stability Board pushes banks toward tighter oversight of agentic AI. <em>Plus Ben Thompson talks Hollywood and AI with Ari Emanuel, Rails tests whether models can build on their own work across sessions, PR review times climb as coding agents write more code, Stripe's Link wallet reaches AI shopping agents, Rockefeller and OpenAI fund AI for city services, Simon Willison on Python 3.15, Denver Public Schools enrollment drops, and a wildcard: a soil bacterium's enzyme that eats both plastic and penicillin.</em></h1>
+<p class="lede">Ten items on this week's AI investment jitters and agentic oversight push, plus engineering, commerce, and Denver notes, closing with a plastic-eating enzyme.</p>
+<p class="lede-sig">— refreshed for you, in 10 items.</p>
+
+<div class="index-rule">
+  <span>idx</span>
+  <span>title</span>
+  <span>type</span>
+</div>
+
+<article class="row">
+  <div class="idx">[01]</div>
+  <div>
+    <p class="meta-line">Rob Wile, NBC News · Oct 15</p>
+    <a class="headline" href="https://www.nbcnews.com/business/markets/stock-market-ai-data-centers-doubts-rcna603710">Cracks are beginning to show in the stock market as doubts about AI investments grow</a>
+    <p class="why">Reports on an AI-linked stock selloff as investors question returns on trillions committed to AI infrastructure.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[02]</div>
+  <div>
+    <p class="meta-line">PaymentExpert · Oct 16</p>
+    <a class="headline" href="https://paymentexpert.com/2026/10/16/the-12-standards-agentic-ai-needs-according-to-fsb">Agentic AI needs greater human oversight says FSB</a>
+    <p class="why">The Financial Stability Board finalized 12 practices requiring board-level oversight of agentic AI at banks.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[03]</div>
+  <div>
+    <p class="meta-line">Ben Thompson, Stratechery · Oct 15</p>
+    <a class="headline" href="https://stratechery.com/2026/a-conversation-with-ari-emanuel-about-entertainment-and-ai/">A Conversation With Ari Emanuel About Entertainment and AI</a>
+    <p class="why">Ben Thompson talks with WME and TKO's Ari Emanuel about AI's effect on Hollywood and entertainment.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[04]</div>
+  <div>
+    <p class="meta-line">Rails · Oct 13</p>
+    <a class="headline" href="https://rubyonrails.org/2026/10/13/agents-on-rails-stage-3">Agents on Rails: Stage 3. Can a model build on its own work?</a>
+    <p class="why">The Rails team's third benchmark stage tests whether models can build on their own work across sessions.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[05]</div>
+  <div>
+    <p class="meta-line">Tech Insider · Oct 15</p>
+    <a class="headline" href="https://tech-insider.org/au/ai-coding-agents-pr-merge-time-governance-2026/">AI Coding Agents Spark 49% Jump in PR Merge Time</a>
+    <p class="why">A developer survey finds AI now writes 42% of code while pull-request merge time rose 49%.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[06]</div>
+  <div>
+    <p class="meta-line">GlobeNewswire · Oct 15</p>
+    <a class="headline" href="https://globenewswire.com/news-release/2026/10/15/3381745/0/en/symphony-by-wix-integrates-link-s-wallet-for-agents-built-by-stripe-enabling-ai-agents-to-make-payments-on-behalf-of-small-businesses.html">Symphony by Wix Integrates Link's Wallet for Agents, Built by Stripe, Enabling AI Agents to Make Payments on Behalf of Small Businesses</a>
+    <p class="why">Wix's Symphony agents gain the ability to pay suppliers through Stripe's Link wallet with owner approval.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[07]</div>
+  <div>
+    <p class="meta-line">Rockefeller Foundation · Oct 14</p>
+    <a class="headline" href="https://www.rockefellerfoundation.org/news/rockefeller-openai-50-million-partnership-cities-improve-public-services-ai/">Rockefeller Foundation, OpenAI Foundation Announce $50 Million Partnership To Help Cities Improve Public Services Through AI</a>
+    <p class="why">Rockefeller Foundation and OpenAI Foundation launch a $50 million initiative to bring AI to city public services.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[08]</div>
+  <div>
+    <p class="meta-line">Simon Willison · Oct 12</p>
+    <a class="headline" href="https://simonwillison.net/2026/Oct/12/python-3-15/">Hello Python 3.15, goodbye 3.10, and now I can use 3.11</a>
+    <p class="why">Simon Willison walks through new Python 3.15 features after dropping support for Python 3.10.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[09]</div>
+  <div>
+    <p class="meta-line">Chalkbeat Colorado · Oct 15</p>
+    <a class="headline" href="https://www.chalkbeat.org/colorado/2026/10/15/denver-public-schools-enrollment-down-by-nearly-1800-students/">Denver school enrollment is down by nearly 1,800 students this fall</a>
+    <p class="why">Chalkbeat reports Denver Public Schools enrollment fell by nearly 1,800 students, steeper than officials expected.</p>
+  </div>
+</article>
+
+<article class="row wildcard">
+  <div class="idx">[10]</div>
+  <div>
+    <p class="meta-line">Wildcard · ScienceDaily · Oct 14</p>
+    <a class="headline" href="https://www.sciencedaily.com/releases/2026/10/261014015509.htm">Scientists discover a plastic-eating "Pac-Man" enzyme with a surprising secret</a>
+    <p class="why">University of Konstanz researchers describe a soil bacteria enzyme that degrades both bioplastics and penicillin.</p>
+  </div>
+</article>
+
+<footer class="foot">
+  <p>$ next-run --interval daily --at "07:00 MT"</p>
+  <p>$ ls archive/ → <a href="../">past digests</a></p>
+</footer>
+
+</div>
+</body>
+</html>
