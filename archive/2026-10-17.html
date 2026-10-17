@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daily Digest — Saturday, Oct 17, 2026</title>
+<meta name="description" content="A daily curated digest of articles, podcasts, and videos for Jesse.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  :root {
+    --bg: #fbfaf7; --fg: #111; --muted: #6b6b6b; --rule: #1a1a1a;
+    --thin: #d4d2cb; --link: #111; --link-hl: #2b5cd3;
+    --accent: #2b5cd3; --accent-bg: #eef2fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e0e10; --fg: #e8e6e0; --muted: #8b8a85; --rule: #e8e6e0;
+      --thin: #2a2a2e; --link: #e8e6e0; --link-hl: #82a7ff;
+      --accent: #82a7ff; --accent-bg: #16213a;
+    }
+  }
+  body {
+    background: var(--bg); color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+    font-family: "Lora", Georgia, serif;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  .topbar {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 12px; border-bottom: 1px solid var(--thin);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  .topbar .nav a {
+    color: var(--muted); text-decoration: none; margin-left: 14px;
+  }
+  .topbar .nav a:hover { color: var(--fg); text-decoration: underline; }
+  .topbar .blink {
+    display: inline-block; width: 7px; height: 13px;
+    background: var(--fg); margin-left: 2px; vertical-align: -2px;
+    animation: blink 1.1s steps(2, end) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .runhead {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    letter-spacing: 0.05em;
+    margin: 0 0 10px;
+  }
+  h1.title {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(36px, 6.5vw, 56px); line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 22px;
+    text-wrap: balance;
+  }
+  h1.title em { font-style: italic; font-weight: 400; color: var(--muted); }
+
+  .lede { font-size: 17px; line-height: 1.6; max-width: 62ch; margin: 0 0 8px; }
+  .lede-sig {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 0 0 48px; letter-spacing: 0.02em;
+  }
+
+  .index-rule {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--thin);
+    padding: 8px 0;
+    display: grid; grid-template-columns: 60px 1fr auto; gap: 16px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  article.row {
+    display: grid; grid-template-columns: 60px 1fr; gap: 0 16px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--thin);
+  }
+  .idx {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    padding-top: 6px; letter-spacing: 0.02em;
+  }
+  .meta-line {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted); letter-spacing: 0.04em;
+    margin: 0 0 6px; text-transform: uppercase;
+  }
+  .meta-line .sep { color: var(--thin); margin: 0 8px; }
+  .meta-line .urgent { color: var(--accent); font-weight: 600; }
+
+  a.headline {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500; font-size: 21px; line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--link); text-decoration: none;
+    display: inline-block; margin: 0 0 8px;
+    text-wrap: balance;
+  }
+  a.headline:hover {
+    text-decoration: underline; text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .why { font-size: 16px; line-height: 1.55; margin: 0; max-width: 60ch; }
+  .why b { font-weight: 600; }
+
+  .companion {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 8px 0 0; letter-spacing: 0.01em;
+  }
+  .companion::before { content: "↳ "; color: var(--thin); }
+  .companion a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  .companion a:hover { color: var(--accent); }
+
+  article.row.wildcard {
+    background: var(--accent-bg);
+    border-left: 2px solid var(--accent);
+    margin: 0 -16px; padding: 22px 16px;
+  }
+  article.row.wildcard .meta-line { color: var(--accent); font-weight: 600; }
+  article.row.wildcard .idx { color: var(--accent); }
+
+  footer.foot {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin-top: 56px; padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    letter-spacing: 0.01em;
+  }
+  footer.foot p { margin: 0 0 4px; }
+  footer.foot a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  footer.foot a:hover { color: var(--fg); }
+
+  @media (max-width: 540px) {
+    article.row { grid-template-columns: 40px 1fr; gap: 0 10px; }
+    .index-rule { grid-template-columns: 40px 1fr auto; }
+    a.headline { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <span>~/digest/2026-10-17 · refresh<span class="blink"></span></span>
+  <span class="nav">
+    <a href="../">archive</a>
+    <a href="https://notes.verynormal.dev">notes</a>
+  </span>
+</div>
+
+<p class="runhead">// daily-digest · sat 17 oct 2026 · morning refresh · last 72h focus</p>
+<h1 class="title">Anthropic quietly pitches Congress a frontier AI safety bill as open-weight models overtake closed ones on token volume. <em>Plus Google's Universal Cart goes live, Stripe's Collison claims agentic payments went vertical, Pragmatic Engineer on Anthropic's move off Git, Simon Willison on continuous AI code review, Rails ships faster blank? checks, Lenny's Josh Woodward on lab teams, Scott Alexander defends AI safety's sincerity, and a wildcard: an even bigger crayfish than Crawzilla.</em></h1>
+<p class="lede">Ten items on AI policy and infrastructure shifts, plus agentic commerce, engineering culture, and Rails notes, closing with a record crayfish.</p>
+<p class="lede-sig">— refreshed for you, in 10 items.</p>
+
+<div class="index-rule">
+  <span>idx</span>
+  <span>title</span>
+  <span>type</span>
+</div>
+
+<article class="row">
+  <div class="idx">[01]</div>
+  <div>
+    <p class="meta-line">Samantha Oltman, Yahoo Finance · Oct 16</p>
+    <a class="headline" href="https://finance.yahoo.com/technology/ai/articles/anthropic-pitches-ai-safety-bill-222533608.html">Anthropic Pitches AI Safety Bill to Lawmakers, Politico Says</a>
+    <p class="why">Draft bill would let the government block a frontier model only for risks above $1 billion in damage.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[02]</div>
+  <div>
+    <p class="meta-line">Vercel · Oct 15</p>
+    <a class="headline" href="https://vercel.com/blog/ai-gateway-production-index-october-2026">Open weight takes 71.5% of tokens and 23% of spend</a>
+    <p class="why">Vercel's September AI Gateway data show open-weight models now carry most token volume but a minority of spend.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[03]</div>
+  <div>
+    <p class="meta-line">Abner Li, 9to5Google · Oct 16</p>
+    <a class="headline" href="https://9to5google.com/2026/10/16/google-universal-cart-shopping-icon/">Google's Universal Cart puts a shopping cart everywhere, including Search homepage, Chrome</a>
+    <p class="why">Google rolled out a cross-retailer AI shopping cart inside Search, Chrome, and the Gemini app in the US.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[04]</div>
+  <div>
+    <p class="meta-line">Tessa Vaughn, Yahoo Finance · Oct 16</p>
+    <a class="headline" href="https://finance.yahoo.com/technology/ai/articles/stripe-president-says-agentic-commerce-181043472.html">Stripe's President Says Agentic Commerce Went 'Vertical' in September. He Has Not Shown the Numbers.</a>
+    <p class="why">Stripe's president said agent-driven payment activity accelerated sharply in September but released no transaction data.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[05]</div>
+  <div>
+    <p class="meta-line">Gergely Orosz, The Pragmatic Engineer · Oct 15</p>
+    <a class="headline" href="https://newsletter.pragmaticengineer.com/p/the-pulse-openai-software-engineer">The Pulse #195: OpenAI software engineer accused of spying</a>
+    <p class="why">Weekly roundup covers an OpenAI spying arrest, Anthropic's move off Git, and internal vibe-coding tools at tech firms.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[06]</div>
+  <div>
+    <p class="meta-line">Simon Willison · Oct 16</p>
+    <a class="headline" href="https://simonwillison.net/2026/Oct/16/code-review/">A quote from Addy Osmani, Morgan Westlee Lunt, and Qing Wang</a>
+    <p class="why">Quoted essay argues code review should run continuously, with Claude checking changes before a human looks.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[07]</div>
+  <div>
+    <p class="meta-line">Rails · Oct 16</p>
+    <a class="headline" href="https://rubyonrails.org/2026/10/16/this-week-in-rails">Faster blank? checks, safer SQLite rollbacks, and more!</a>
+    <p class="why">Weekly Rails roundup covers a faster String#blank?, isolated connection state across threads, and an agent coding experiment.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[08]</div>
+  <div>
+    <p class="meta-line">Lenny Rachitsky, Lenny's Newsletter · Oct 11</p>
+    <a class="headline" href="https://www.lennysnewsletter.com/p/why-every-company-now-needs-to-think">Why every company now needs to think and operate like a lab team</a>
+    <p class="why">Google Labs' Josh Woodward discusses running small, fast product teams inside a large AI company.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[09]</div>
+  <div>
+    <p class="meta-line">Scott Alexander, Astral Codex Ten · Oct 15</p>
+    <a class="headline" href="https://www.astralcodexten.com/p/ai-safety-is-not-a-corporate-plot">AI Safety Is Not A Corporate Plot</a>
+    <p class="why">Argues AI companies' safety warnings are sincere, not a PR strategy to deter competition or regulation.</p>
+  </div>
+</article>
+
+<article class="row wildcard">
+  <div class="idx">[10]</div>
+  <div>
+    <p class="meta-line">Wildcard · ScienceDaily · Oct 15</p>
+    <a class="headline" href="https://www.sciencedaily.com/releases/2026/10/261015073220.htm">"Crawzilla" was huge. Then scientists found an even bigger crayfish</a>
+    <p class="why">A nationwide crayfish survey found a bigger record-holder than Crawzilla and hints at a species size limit.</p>
+  </div>
+</article>
+
+<footer class="foot">
+  <p>$ next-run --interval daily --at "07:00 MT"</p>
+  <p>$ ls archive/ → <a href="archive/">past digests</a></p>
+</footer>
+
+</div>
+</body>
+</html>
