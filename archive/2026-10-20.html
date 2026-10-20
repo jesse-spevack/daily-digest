@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daily Digest — Tuesday, Oct 20, 2026</title>
+<meta name="description" content="A daily curated digest of articles, podcasts, and videos for Jesse.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  :root {
+    --bg: #fbfaf7; --fg: #111; --muted: #6b6b6b; --rule: #1a1a1a;
+    --thin: #d4d2cb; --link: #111; --link-hl: #2b5cd3;
+    --accent: #2b5cd3; --accent-bg: #eef2fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e0e10; --fg: #e8e6e0; --muted: #8b8a85; --rule: #e8e6e0;
+      --thin: #2a2a2e; --link: #e8e6e0; --link-hl: #82a7ff;
+      --accent: #82a7ff; --accent-bg: #16213a;
+    }
+  }
+  body {
+    background: var(--bg); color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+    font-family: "Lora", Georgia, serif;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  .topbar {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 12px; border-bottom: 1px solid var(--thin);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  .topbar .nav a {
+    color: var(--muted); text-decoration: none; margin-left: 14px;
+  }
+  .topbar .nav a:hover { color: var(--fg); text-decoration: underline; }
+  .topbar .blink {
+    display: inline-block; width: 7px; height: 13px;
+    background: var(--fg); margin-left: 2px; vertical-align: -2px;
+    animation: blink 1.1s steps(2, end) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .runhead {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    letter-spacing: 0.05em;
+    margin: 0 0 10px;
+  }
+  h1.title {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(36px, 6.5vw, 56px); line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 22px;
+    text-wrap: balance;
+  }
+  h1.title em { font-style: italic; font-weight: 400; color: var(--muted); }
+
+  .lede { font-size: 17px; line-height: 1.6; max-width: 62ch; margin: 0 0 8px; }
+  .lede-sig {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 0 0 48px; letter-spacing: 0.02em;
+  }
+
+  .index-rule {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--thin);
+    padding: 8px 0;
+    display: grid; grid-template-columns: 60px 1fr auto; gap: 16px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  article.row {
+    display: grid; grid-template-columns: 60px 1fr; gap: 0 16px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--thin);
+  }
+  .idx {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    padding-top: 6px; letter-spacing: 0.02em;
+  }
+  .meta-line {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted); letter-spacing: 0.04em;
+    margin: 0 0 6px; text-transform: uppercase;
+  }
+  .meta-line .sep { color: var(--thin); margin: 0 8px; }
+  .meta-line .urgent { color: var(--accent); font-weight: 600; }
+
+  a.headline {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500; font-size: 21px; line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--link); text-decoration: none;
+    display: inline-block; margin: 0 0 8px;
+    text-wrap: balance;
+  }
+  a.headline:hover {
+    text-decoration: underline; text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .why { font-size: 16px; line-height: 1.55; margin: 0; max-width: 60ch; }
+  .why b { font-weight: 600; }
+
+  .companion {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 8px 0 0; letter-spacing: 0.01em;
+  }
+  .companion::before { content: "↳ "; color: var(--thin); }
+  .companion a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  .companion a:hover { color: var(--accent); }
+
+  article.row.wildcard {
+    background: var(--accent-bg);
+    border-left: 2px solid var(--accent);
+    margin: 0 -16px; padding: 22px 16px;
+  }
+  article.row.wildcard .meta-line { color: var(--accent); font-weight: 600; }
+  article.row.wildcard .idx { color: var(--accent); }
+
+  footer.foot {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin-top: 56px; padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    letter-spacing: 0.01em;
+  }
+  footer.foot p { margin: 0 0 4px; }
+  footer.foot a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  footer.foot a:hover { color: var(--fg); }
+
+  @media (max-width: 540px) {
+    article.row { grid-template-columns: 40px 1fr; gap: 0 10px; }
+    .index-rule { grid-template-columns: 40px 1fr auto; }
+    a.headline { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <span>~/digest/2026-10-20 · refresh<span class="blink"></span></span>
+  <span class="nav">
+    <a href="../">archive</a>
+    <a href="https://notes.verynormal.dev">notes</a>
+  </span>
+</div>
+
+<p class="runhead">// daily-digest · tue 20 oct 2026 · morning refresh · last 72h focus</p>
+<h1 class="title">HSBC's CEO warns not every AI data center bet will pay off, as Microsoft brands agents the new insider threat. <em>Plus DeepSeek's cheaper agentic model, Anthropic's AI safety bill rewrite, Stripe's voice-payment agents, a look inside Anthropic's interpretability lab, Sean Goedecke on requirements, Perplexity's open-sourced agent sandbox, Derek Thompson on math grief, and a wildcard: the first known green star.</em></h1>
+<p class="lede">Ten items on AI infrastructure debt and agent-security debates, plus coding-agent and fintech-infrastructure news, closing with an astronomical surprise.</p>
+<p class="lede-sig">— refreshed for you, in 10 items.</p>
+
+<div class="index-rule">
+  <span>idx</span>
+  <span>title</span>
+  <span>type</span>
+</div>
+
+<article class="row">
+  <div class="idx">[01]</div>
+  <div>
+    <p class="meta-line">CNBC · Oct 20</p>
+    <a class="headline" href="https://www.cnbc.com/2026/10/20/data-center-financing-ai-debt-hsbc.html">HSBC CEO warns the AI boom won't make every data center a good bet</a>
+    <p class="why">HSBC's CEO says investors should be selective about AI data center financing, warning not every deal merits support.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[02]</div>
+  <div>
+    <p class="meta-line">Julie Bort, TechCrunch · Oct 19</p>
+    <a class="headline" href="https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/">Microsoft says AI agents are like insider threats as 'frontier models can't be trusted'</a>
+    <p class="why">Microsoft rolled out tools to monitor and restrict AI agents in enterprise software, treating them as insider-threat risks.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[03]</div>
+  <div>
+    <p class="meta-line">Matthias Bastian, The Decoder · Oct 17</p>
+    <a class="headline" href="https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/">Deepseek V4.1 Flash 1017 beats larger rivals in agentic tasks while once again massively cutting per-task costs</a>
+    <p class="why">DeepSeek released V4.1-Flash, a cheaper open-weight model that outperforms larger rivals on agentic coding tasks.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[04]</div>
+  <div>
+    <p class="meta-line">Ana-Maria Stanciuc, The Next Web · Oct 20</p>
+    <a class="headline" href="https://thenextweb.com/news/anthropic-leaked-ai-safety-bill-backlash-frontier">Anthropic to rewrite part of its leaked AI bill after safety backlash</a>
+    <p class="why">Anthropic says it will revise part of its draft federal AI safety bill after safety-advocate criticism.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[05]</div>
+  <div>
+    <p class="meta-line">Unite.AI · Oct 20</p>
+    <a class="headline" href="https://unite.ai/sierra-partners-with-stripe-to-bring-payments-into-ai-agent-calls">Sierra Partners with Stripe to Bring Payments Into AI Agent Calls</a>
+    <p class="why">Sierra and Stripe now let AI voice agents take payments and send receipts within a single phone call.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[06]</div>
+  <div>
+    <p class="meta-line">Lenny Rachitsky, Lenny's Newsletter · Oct 18</p>
+    <a class="headline" href="https://www.lennysnewsletter.com/p/a-mind-expanding-conversation-on">Inside the black box of AI: How AI models actually think</a>
+    <p class="why">An Anthropic interpretability researcher discusses what looking inside language models reveals about planning and internal structure.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[07]</div>
+  <div>
+    <p class="meta-line">Sean Goedecke · Oct 19</p>
+    <a class="headline" href="https://www.seangoedecke.com/what-requirements-dont-you-have/">What requirements don't you have?</a>
+    <p class="why">Argues that identifying which requirements you don't actually have is key to simpler software design.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[08]</div>
+  <div>
+    <p class="meta-line">Asif Razzaq, MarkTechPost · Oct 16</p>
+    <a class="headline" href="https://www.marktechpost.com/2026/10/16/perplexity-open-sources-space-firecracker-microvm-sandbox-ai-agents/">Perplexity Open-Sources SPACE, a Firecracker MicroVM Sandbox for AI Agents</a>
+    <p class="why">Perplexity open-sourced a Firecracker microVM sandbox for running AI agent code in isolation at low latency.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[09]</div>
+  <div>
+    <p class="meta-line">Derek Thompson · Oct 15</p>
+    <a class="headline" href="https://www.derekthompson.org/p/i-know-why-the-mathematicians-weep">I Know Why the Mathematicians Weep</a>
+    <p class="why">Explores why mathematicians are grieving as AI systems solve problems once worked out through human collaboration.</p>
+  </div>
+</article>
+
+<article class="row wildcard">
+  <div class="idx">[10]</div>
+  <div>
+    <p class="meta-line">Wildcard · Robert Lea, Space.com · Oct 15</p>
+    <a class="headline" href="https://www.space.com/astronomy/stars/astronomers-discover-the-1st-ever-green-star-a-cosmic-zombie-just-in-time-for-halloween">Astronomers discover the 1st ever green star, a cosmic zombie just in time for Halloween</a>
+    <p class="why">Astronomers identified the first known green-appearing star, a white dwarf colored by metals from consumed planetary debris.</p>
+  </div>
+</article>
+
+<footer class="foot">
+  <p>$ next-run --interval daily --at "07:00 MT"</p>
+  <p>$ ls archive/ → <a href="../">past digests</a></p>
+</footer>
+
+</div>
+</body>
+</html>
