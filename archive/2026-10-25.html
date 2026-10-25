@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daily Digest — Sunday, Oct 25, 2026</title>
+<meta name="description" content="A daily curated digest of articles, podcasts, and videos for Jesse.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  :root {
+    --bg: #fbfaf7; --fg: #111; --muted: #6b6b6b; --rule: #1a1a1a;
+    --thin: #d4d2cb; --link: #111; --link-hl: #2b5cd3;
+    --accent: #2b5cd3; --accent-bg: #eef2fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e0e10; --fg: #e8e6e0; --muted: #8b8a85; --rule: #e8e6e0;
+      --thin: #2a2a2e; --link: #e8e6e0; --link-hl: #82a7ff;
+      --accent: #82a7ff; --accent-bg: #16213a;
+    }
+  }
+  body {
+    background: var(--bg); color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+    font-family: "Lora", Georgia, serif;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  .topbar {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 12px; border-bottom: 1px solid var(--thin);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  .topbar .nav a {
+    color: var(--muted); text-decoration: none; margin-left: 14px;
+  }
+  .topbar .nav a:hover { color: var(--fg); text-decoration: underline; }
+  .topbar .blink {
+    display: inline-block; width: 7px; height: 13px;
+    background: var(--fg); margin-left: 2px; vertical-align: -2px;
+    animation: blink 1.1s steps(2, end) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .runhead {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    letter-spacing: 0.05em;
+    margin: 0 0 10px;
+  }
+  h1.title {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(36px, 6.5vw, 56px); line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 22px;
+    text-wrap: balance;
+  }
+  h1.title em { font-style: italic; font-weight: 400; color: var(--muted); }
+
+  .lede { font-size: 17px; line-height: 1.6; max-width: 62ch; margin: 0 0 8px; }
+  .lede-sig {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 0 0 48px; letter-spacing: 0.02em;
+  }
+
+  .index-rule {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--thin);
+    padding: 8px 0;
+    display: grid; grid-template-columns: 60px 1fr auto; gap: 16px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  article.row {
+    display: grid; grid-template-columns: 60px 1fr; gap: 0 16px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--thin);
+  }
+  .idx {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    padding-top: 6px; letter-spacing: 0.02em;
+  }
+  .meta-line {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted); letter-spacing: 0.04em;
+    margin: 0 0 6px; text-transform: uppercase;
+  }
+  .meta-line .sep { color: var(--thin); margin: 0 8px; }
+  .meta-line .urgent { color: var(--accent); font-weight: 600; }
+
+  a.headline {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500; font-size: 21px; line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--link); text-decoration: none;
+    display: inline-block; margin: 0 0 8px;
+    text-wrap: balance;
+  }
+  a.headline:hover {
+    text-decoration: underline; text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .why { font-size: 16px; line-height: 1.55; margin: 0; max-width: 60ch; }
+  .why b { font-weight: 600; }
+
+  .companion {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 8px 0 0; letter-spacing: 0.01em;
+  }
+  .companion::before { content: "↳ "; color: var(--thin); }
+  .companion a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  .companion a:hover { color: var(--accent); }
+
+  article.row.wildcard {
+    background: var(--accent-bg);
+    border-left: 2px solid var(--accent);
+    margin: 0 -16px; padding: 22px 16px;
+  }
+  article.row.wildcard .meta-line { color: var(--accent); font-weight: 600; }
+  article.row.wildcard .idx { color: var(--accent); }
+
+  footer.foot {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin-top: 56px; padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    letter-spacing: 0.01em;
+  }
+  footer.foot p { margin: 0 0 4px; }
+  footer.foot a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  footer.foot a:hover { color: var(--fg); }
+
+  @media (max-width: 540px) {
+    article.row { grid-template-columns: 40px 1fr; gap: 0 10px; }
+    .index-rule { grid-template-columns: 40px 1fr auto; }
+    a.headline { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <span>~/digest/2026-10-25 · refresh<span class="blink"></span></span>
+  <span class="nav">
+    <a href="../">archive</a>
+    <a href="https://notes.verynormal.dev">notes</a>
+  </span>
+</div>
+
+<p class="runhead">// daily-digest · sun 25 oct 2026 · morning refresh · last 72h focus</p>
+<h1 class="title">Texas's attorney general sues OpenAI over ChatGPT's safety claims, days after the company lowered its pre-IPO valuation target by $150 billion. <em>Plus OpenAI's Decisions API goes generally available, its frontier models land on Google Cloud, Sean Goedecke on treating employers like machines, Noah Smith on the AI-driven hacking wave rattling the internet, Lenny's guide to product-market fit, Scott Alexander's case for AI "handover," Moonshot's Kimi K3.1 Pro, and a wildcard: a 70-year theory of language, overturned.</em></h1>
+<p class="lede">Ten items on OpenAI's legal and financial turbulence, agentic AI infrastructure, and software career philosophy, closing with a linguistics study.</p>
+<p class="lede-sig">— refreshed for you, in 10 items.</p>
+
+<div class="index-rule">
+  <span>idx</span>
+  <span>title</span>
+  <span>type</span>
+</div>
+
+<article class="row">
+  <div class="idx">[01]</div>
+  <div>
+    <p class="meta-line">Texas Tribune · Oct 23</p>
+    <a class="headline" href="https://www.texastribune.org/2026/10/23/ken-paxton-chatgpt-openai-lawsuit-texas-attorney-general/">Texas Attorney General Ken Paxton sues ChatGPT-maker OpenAI</a>
+    <p class="why">Texas's attorney general sued OpenAI, alleging ChatGPT misled consumers about its safety and harmed vulnerable teenage users.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[02]</div>
+  <div>
+    <p class="meta-line">24/7 Wall St. · Oct 23</p>
+    <a class="headline" href="https://247wallst.com/investing/2026/10/23/openai-just-cut-its-valuation-target-by-150-billion/">OpenAI Just Cut Its Valuation Target by $150 Billion</a>
+    <p class="why">OpenAI reportedly lowered its pre-IPO valuation target from $1.4 trillion to $1.25 trillion after investor pushback.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[03]</div>
+  <div>
+    <p class="meta-line">Tim Fernholz, TechCrunch · Oct 22</p>
+    <a class="headline" href="https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/">OpenAI makes its Jev competitor widely available as decision model competition heats up</a>
+    <p class="why">OpenAI makes its Decisions API generally available, citing faster response times and new voice and image inputs.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[04]</div>
+  <div>
+    <p class="meta-line">OpenAI · Oct 21</p>
+    <a class="headline" href="https://openai.com/index/openai-models-google-cloud/">OpenAI models are coming to Google Cloud</a>
+    <p class="why">OpenAI will offer its frontier models and Codex coding agent through Google Cloud's Model Garden for enterprise customers.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[05]</div>
+  <div>
+    <p class="meta-line">Simon Willison · Oct 23</p>
+    <a class="headline" href="https://simonwillison.net/2026/Oct/23/kimi-k31-pro/">Introducing Kimi K3.1 Pro</a>
+    <p class="why">Simon Willison reviews Moonshot's newly launched Kimi K3.1 Pro model, competitively priced against GPT-6.1 Sol.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[06]</div>
+  <div>
+    <p class="meta-line">Sean Goedecke · Oct 25</p>
+    <a class="headline" href="https://www.seangoedecke.com/dont-anthropomorphize-big-tech-companies/">Don't anthropomorphize big tech companies</a>
+    <p class="why">Essay argues engineers should treat employers as impersonal, incentive-driven machines rather than people with values.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[07]</div>
+  <div>
+    <p class="meta-line">Noah Smith, Noahpinion · Oct 25</p>
+    <a class="headline" href="https://www.noahpinion.blog/p/the-internet-breaks">The Internet Breaks</a>
+    <p class="why">Column examines a wave of AI-assisted cyberattacks exploiting newly found vulnerabilities across core internet infrastructure.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[08]</div>
+  <div>
+    <p class="meta-line">Lenny Rachitsky, Lenny's Newsletter · Oct 25</p>
+    <a class="headline" href="https://www.lennysnewsletter.com/p/an-86-minute-guide-to-finding-pmf">An 86-minute guide to finding PMF</a>
+    <p class="why">Podcast conversation with Rob Snyder on his PULL framework for helping startups reach product-market fit.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[09]</div>
+  <div>
+    <p class="meta-line">Scott Alexander, Astral Codex Ten · Oct 20</p>
+    <a class="headline" href="https://www.astralcodexten.com/p/against-against-handover">Against Against Handover</a>
+    <p class="why">Essay weighs whether ceding governance to aligned AI could beat human rule, against the risk of AI takeover.</p>
+  </div>
+</article>
+
+<article class="row wildcard">
+  <div class="idx">[10]</div>
+  <div>
+    <p class="meta-line">Wildcard · Linguistics · ScienceDaily · Oct 23</p>
+    <a class="headline" href="https://www.sciencedaily.com/releases/2026/10/261023023738.htm">A hidden bias in human language challenges 70 years of science</a>
+    <p class="why">University of Vermont study finds human language favors safety over danger, challenging a 70-year theory of meaning.</p>
+  </div>
+</article>
+
+<footer class="foot">
+  <p>$ next-run --interval daily --at "07:00 MT"</p>
+  <p>$ ls archive/ → <a href="archive/">past digests</a></p>
+</footer>
+
+</div>
+</body>
+</html>
