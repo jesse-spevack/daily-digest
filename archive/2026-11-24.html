@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daily Digest — Tuesday, Nov 24, 2026</title>
+<meta name="description" content="A daily curated digest of articles, podcasts, and videos for Jesse.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  :root {
+    --bg: #fbfaf7; --fg: #111; --muted: #6b6b6b; --rule: #1a1a1a;
+    --thin: #d4d2cb; --link: #111; --link-hl: #2b5cd3;
+    --accent: #2b5cd3; --accent-bg: #eef2fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e0e10; --fg: #e8e6e0; --muted: #8b8a85; --rule: #e8e6e0;
+      --thin: #2a2a2e; --link: #e8e6e0; --link-hl: #82a7ff;
+      --accent: #82a7ff; --accent-bg: #16213a;
+    }
+  }
+  body {
+    background: var(--bg); color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+    font-family: "Lora", Georgia, serif;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  .topbar {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 12px; border-bottom: 1px solid var(--thin);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  .topbar .nav a {
+    color: var(--muted); text-decoration: none; margin-left: 14px;
+  }
+  .topbar .nav a:hover { color: var(--fg); text-decoration: underline; }
+  .topbar .blink {
+    display: inline-block; width: 7px; height: 13px;
+    background: var(--fg); margin-left: 2px; vertical-align: -2px;
+    animation: blink 1.1s steps(2, end) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .runhead {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    letter-spacing: 0.05em;
+    margin: 0 0 10px;
+  }
+  h1.title {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(36px, 6.5vw, 56px); line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 22px;
+    text-wrap: balance;
+  }
+  h1.title em { font-style: italic; font-weight: 400; color: var(--muted); }
+
+  .lede { font-size: 17px; line-height: 1.6; max-width: 62ch; margin: 0 0 8px; }
+  .lede-sig {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 0 0 48px; letter-spacing: 0.02em;
+  }
+
+  .index-rule {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--thin);
+    padding: 8px 0;
+    display: grid; grid-template-columns: 60px 1fr auto; gap: 16px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  article.row {
+    display: grid; grid-template-columns: 60px 1fr; gap: 0 16px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--thin);
+  }
+  .idx {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    padding-top: 6px; letter-spacing: 0.02em;
+  }
+  .meta-line {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted); letter-spacing: 0.04em;
+    margin: 0 0 6px; text-transform: uppercase;
+  }
+  .meta-line .sep { color: var(--thin); margin: 0 8px; }
+  .meta-line .urgent { color: var(--accent); font-weight: 600; }
+
+  a.headline {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500; font-size: 21px; line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--link); text-decoration: none;
+    display: inline-block; margin: 0 0 8px;
+    text-wrap: balance;
+  }
+  a.headline:hover {
+    text-decoration: underline; text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .why { font-size: 16px; line-height: 1.55; margin: 0; max-width: 60ch; }
+  .why b { font-weight: 600; }
+
+  .companion {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 8px 0 0; letter-spacing: 0.01em;
+  }
+  .companion::before { content: "↳ "; color: var(--thin); }
+  .companion a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  .companion a:hover { color: var(--accent); }
+
+  article.row.wildcard {
+    background: var(--accent-bg);
+    border-left: 2px solid var(--accent);
+    margin: 0 -16px; padding: 22px 16px;
+  }
+  article.row.wildcard .meta-line { color: var(--accent); font-weight: 600; }
+  article.row.wildcard .idx { color: var(--accent); }
+
+  footer.foot {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin-top: 56px; padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    letter-spacing: 0.01em;
+  }
+  footer.foot p { margin: 0 0 4px; }
+  footer.foot a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  footer.foot a:hover { color: var(--fg); }
+
+  @media (max-width: 540px) {
+    article.row { grid-template-columns: 40px 1fr; gap: 0 10px; }
+    .index-rule { grid-template-columns: 40px 1fr auto; }
+    a.headline { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <span>~/digest/2026-11-24 · refresh<span class="blink"></span></span>
+  <span class="nav">
+    <a href="../">archive</a>
+    <a href="https://notes.verynormal.dev">notes</a>
+  </span>
+</div>
+
+<p class="runhead">// daily-digest · tue 24 nov 2026 · morning refresh · last 72h focus</p>
+<h1 class="title">Anthropic says Claude proved a 47-year-old math conjecture and opened zero-retention safety monitoring to enterprises, while OpenAI brought GPT-6.2 Sol to ChatGPT and partnered with Cisco on a Linux exploit shield. <em>Plus AWS ships Gemma 4-based decision models for AI agents, Dell's AI server backlog hits $132.3 billion, Ben Thompson examines Jensen Huang's Nvidia exception, Simon Willison reviews a new looped-transformer coding model, and Scott Alexander opens the 2027 ACX/Metaculus forecasting contest &mdash; plus a wildcard: physicists find a simple metal hiding a strange new form of magnetism.</em></h1>
+<p class="lede">Ten items on Anthropic's unverified Claude-authored math proof and new enterprise safeguards, OpenAI's model rollout and Linux security tool, and Dell's record AI backlog, plus a wildcard on an unusual form of magnetism.</p>
+<p class="lede-sig">— refreshed for you, in 10 items.</p>
+
+<div class="index-rule">
+  <span>idx</span>
+  <span>title</span>
+  <span>type</span>
+</div>
+
+<article class="row">
+  <div class="idx">[01]</div>
+  <div>
+    <p class="meta-line">Aamir Khollam, Interesting Engineering · Nov 23</p>
+    <a class="headline" href="https://interestingengineering.com/ai-robotics/claude-proves-vp-not-vnp-valiant-conjecture">Anthropic says Claude proved VP ≠ VNP, tackling Valiant's 47-year-old conjecture</a>
+    <p class="why">Anthropic published a 70-page paper crediting Claude with proving VP ≠ VNP, unverified by mathematicians.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[02]</div>
+  <div>
+    <p class="meta-line">Anthropic · Nov 23</p>
+    <a class="headline" href="https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards">Zero data retention with Enterprise Frontier Safeguards is now in beta</a>
+    <p class="why">Anthropic's Enterprise Frontier Safeguards beta adds cross-request misuse detection while preserving zero data retention.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[03]</div>
+  <div>
+    <p class="meta-line">Zac Hall, 9to5Mac · Nov 23</p>
+    <a class="headline" href="https://9to5mac.com/2026/11/23/chatgpt-expands-gpt-6-2-sol-as-openai-sets-retirement-date-for-two-models/">ChatGPT expands GPT-6.2 Sol as OpenAI sets retirement date for two models</a>
+    <p class="why">OpenAI brought GPT-6.2 Sol to ChatGPT's Chat tab, setting a December 23 retirement date for two older models.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[04]</div>
+  <div>
+    <p class="meta-line">Ravie Lakshmanan, The Hacker News · Nov 24</p>
+    <a class="headline" href="https://thehackernews.com/2026/11/openai-and-cisco-unveil-ai-assisted.html">OpenAI and Cisco Unveil AI-Assisted Linux Security Tool to Block Exploits Before Patching</a>
+    <p class="why">OpenAI and Cisco released Shirudo, an open-source eBPF tool letting AI agents shield unpatched Linux systems from exploits.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[05]</div>
+  <div>
+    <p class="meta-line">Sean Michael Kerner, VentureBeat · Nov 23</p>
+    <a class="headline" href="https://venturebeat.com/data/awss-strands-decider-v2-targets-the-agent-decisions-that-hinge-on-a-single-detail">AWS's Strands Decider v2 targets the agent decisions that hinge on a single detail</a>
+    <p class="why">AWS released Strands Decider v2, open-weight Gemma 4-based models that score agent decisions without generating text.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[06]</div>
+  <div>
+    <p class="meta-line">Diego Almada Lopez, CryptoBriefing · Nov 24</p>
+    <a class="headline" href="https://cryptobriefing.com/dell-ai-server-backlog-132-billion/">Dell's AI server backlog hits $132.3 billion, up 619% year over year</a>
+    <p class="why">Dell reported a record $132.3 billion AI server backlog, up 619% year over year, in Q3 earnings.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[07]</div>
+  <div>
+    <p class="meta-line">Ben Thompson, Stratechery · Nov 24</p>
+    <a class="headline" href="https://stratechery.com/2026/the-individual-exception/">The Individual Exception</a>
+    <p class="why">Weekly column examining Jensen Huang's Nvidia reinstatement as a sign AI empowers indispensable individual contributors.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[08]</div>
+  <div>
+    <p class="meta-line">Simon Willison · Nov 23</p>
+    <a class="headline" href="https://simonwillison.net/2026/Nov/23/glm-54/">GLM-5.4: Toward Generalized Coding with Our First Loop Transformer</a>
+    <p class="why">Simon Willison reviews Z.ai's GLM-5.4, a coding-focused model built on a new looped transformer architecture.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[09]</div>
+  <div>
+    <p class="meta-line">Scott Alexander, Astral Codex Ten · Nov 21</p>
+    <a class="headline" href="https://www.astralcodexten.com/p/suggest-questions-for-the-2027-acxmetaculus">Suggest Questions For The 2027 ACX/Metaculus Prediction Contest</a>
+    <p class="why">Scott Alexander invites reader-submitted questions for the 2027 ACX/Metaculus forecasting contest, with cash prizes for top submissions.</p>
+  </div>
+</article>
+
+<article class="row wildcard">
+  <div class="idx">[10]</div>
+  <div>
+    <p class="meta-line">Wildcard · Physics · Max Planck Institute for Chemical Physics of Solids via ScienceDaily · Nov 24</p>
+    <a class="headline" href="https://www.sciencedaily.com/releases/2026/11/261123005341.htm">A simple metal is hiding a strange new form of magnetism</a>
+    <p class="why">Researchers found experimental evidence of p-wave magnetism in europium silicide, a material with no net magnetization.</p>
+  </div>
+</article>
+
+<footer class="foot">
+  <p>$ next-run --interval daily --at "07:00 MT"</p>
+  <p>$ ls archive/ → <a href="archive/">past digests</a></p>
+</footer>
+
+</div>
+</body>
+</html>
