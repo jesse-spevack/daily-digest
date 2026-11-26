@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daily Digest — Thursday, Nov 26, 2026</title>
+<meta name="description" content="A daily curated digest of articles, podcasts, and videos for Jesse.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  :root {
+    --bg: #fbfaf7; --fg: #111; --muted: #6b6b6b; --rule: #1a1a1a;
+    --thin: #d4d2cb; --link: #111; --link-hl: #2b5cd3;
+    --accent: #2b5cd3; --accent-bg: #eef2fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e0e10; --fg: #e8e6e0; --muted: #8b8a85; --rule: #e8e6e0;
+      --thin: #2a2a2e; --link: #e8e6e0; --link-hl: #82a7ff;
+      --accent: #82a7ff; --accent-bg: #16213a;
+    }
+  }
+  body {
+    background: var(--bg); color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+    font-family: "Lora", Georgia, serif;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  .topbar {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 12px; border-bottom: 1px solid var(--thin);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  .topbar .nav a {
+    color: var(--muted); text-decoration: none; margin-left: 14px;
+  }
+  .topbar .nav a:hover { color: var(--fg); text-decoration: underline; }
+  .topbar .blink {
+    display: inline-block; width: 7px; height: 13px;
+    background: var(--fg); margin-left: 2px; vertical-align: -2px;
+    animation: blink 1.1s steps(2, end) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .runhead {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    letter-spacing: 0.05em;
+    margin: 0 0 10px;
+  }
+  h1.title {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(36px, 6.5vw, 56px); line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 22px;
+    text-wrap: balance;
+  }
+  h1.title em { font-style: italic; font-weight: 400; color: var(--muted); }
+
+  .lede { font-size: 17px; line-height: 1.6; max-width: 62ch; margin: 0 0 8px; }
+  .lede-sig {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 0 0 48px; letter-spacing: 0.02em;
+  }
+
+  .index-rule {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--thin);
+    padding: 8px 0;
+    display: grid; grid-template-columns: 60px 1fr auto; gap: 16px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  article.row {
+    display: grid; grid-template-columns: 60px 1fr; gap: 0 16px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--thin);
+  }
+  .idx {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    padding-top: 6px; letter-spacing: 0.02em;
+  }
+  .meta-line {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px; color: var(--muted); letter-spacing: 0.04em;
+    margin: 0 0 6px; text-transform: uppercase;
+  }
+  .meta-line .sep { color: var(--thin); margin: 0 8px; }
+  .meta-line .urgent { color: var(--accent); font-weight: 600; }
+
+  a.headline {
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500; font-size: 21px; line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--link); text-decoration: none;
+    display: inline-block; margin: 0 0 8px;
+    text-wrap: balance;
+  }
+  a.headline:hover {
+    text-decoration: underline; text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .why { font-size: 16px; line-height: 1.55; margin: 0; max-width: 60ch; }
+  .why b { font-weight: 600; }
+
+  .companion {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin: 8px 0 0; letter-spacing: 0.01em;
+  }
+  .companion::before { content: "↳ "; color: var(--thin); }
+  .companion a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  .companion a:hover { color: var(--accent); }
+
+  article.row.wildcard {
+    background: var(--accent-bg);
+    border-left: 2px solid var(--accent);
+    margin: 0 -16px; padding: 22px 16px;
+  }
+  article.row.wildcard .meta-line { color: var(--accent); font-weight: 600; }
+  article.row.wildcard .idx { color: var(--accent); }
+
+  footer.foot {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px; color: var(--muted);
+    margin-top: 56px; padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    letter-spacing: 0.01em;
+  }
+  footer.foot p { margin: 0 0 4px; }
+  footer.foot a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  footer.foot a:hover { color: var(--fg); }
+
+  @media (max-width: 540px) {
+    article.row { grid-template-columns: 40px 1fr; gap: 0 10px; }
+    .index-rule { grid-template-columns: 40px 1fr auto; }
+    a.headline { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <span>~/digest/2026-11-26 · refresh<span class="blink"></span></span>
+  <span class="nav">
+    <a href="../">archive</a>
+    <a href="https://notes.verynormal.dev">notes</a>
+  </span>
+</div>
+
+<p class="runhead">// daily-digest · thu 26 nov 2026 · morning refresh · last 72h focus</p>
+<h1 class="title">Anthropic migrated Claude's Messages API to Rust and used Claude to shrink a claimed Riemann Hypothesis proof to 76,000 lines, while Google's Cogentic agent produced six AI-generated math proofs and OpenAI began alpha-testing Private Inference for business prompts. <em>Plus Ben Thompson talks agentic commerce with Eric Seufert, Sean Goedecke questions whether output caching actually saves tokens, an executive automates his life with OpenClaw, and Denver commits $40 million toward its 2028 DNC bid amid fresh tension on the school board &mdash; plus a wildcard: scientists trace a carbon signature in Hawaiian lava back to ancient meteorites leaking from Earth's core.</em></h1>
+<p class="lede">Ten items on Anthropic's Rust rewrite and Claude-assisted math proofs, Google's AI-generated factoring papers, and OpenAI's new privacy-preserving inference, plus a wildcard on carbon leaking from Earth's core.</p>
+<p class="lede-sig">— refreshed for you, in 10 items.</p>
+
+<div class="index-rule">
+  <span>idx</span>
+  <span>title</span>
+  <span>type</span>
+</div>
+
+<article class="row">
+  <div class="idx">[01]</div>
+  <div>
+    <p class="meta-line">Anthropic · Nov 25</p>
+    <a class="headline" href="https://www.anthropic.com/research/migrating-api-to-rust">Migrating our Messages API to Rust</a>
+    <p class="why">Anthropic migrated its Messages API from Python to Rust with Claude's help, cutting CPU use per request by about 70%.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[02]</div>
+  <div>
+    <p class="meta-line">Aiden Cross, Unite.AI · Nov 25</p>
+    <a class="headline" href="https://www.unite.ai/openai-begins-limited-customer-trials-of-alpha-private-inference/">OpenAI Begins Limited Customer Trials of Alpha Private Inference</a>
+    <p class="why">OpenAI began alpha testing Private Inference, which shields business prompts and responses while models process them.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[03]</div>
+  <div>
+    <p class="meta-line">Brian Buntz, R&amp;D World · Nov 25</p>
+    <a class="headline" href="https://www.rdworldonline.com/google-cogentic-ai-integer-factoring-bounds-lean-proofs/">Google's Gemini 4 agent claims six math proofs in a day, including one on factoring 30 years in the making</a>
+    <p class="why">Google's Cogentic agent, built on Gemini 4, produced six Lean-checked math papers, including a new integer-factoring bound.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[04]</div>
+  <div>
+    <p class="meta-line">OfficeChai · Nov 25</p>
+    <a class="headline" href="https://officechai.com/ai/anthropic-researchers-use-claude-to-shrink-riemann-hypothesis-proof-from-17-4-million-lines-of-lean-to-76000/">Anthropic Researchers Use Claude To Shrink Riemann Hypothesis Proof From 17.4 Million Lines Of Lean To 76,000</a>
+    <p class="why">Anthropic researchers used Claude to shrink a claimed Riemann Hypothesis Lean proof from 17.4 million lines to 76,000.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[05]</div>
+  <div>
+    <p class="meta-line">Ben Thompson, Stratechery · Nov 19</p>
+    <a class="headline" href="https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/">An Interview With Eric Seufert About Agentic Commerce</a>
+    <p class="why">Ben Thompson interviews Eric Seufert on agentic commerce, advertising's role in it, and which retailers are built for AI shoppers.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[06]</div>
+  <div>
+    <p class="meta-line">Sean Goedecke · Nov 21</p>
+    <a class="headline" href="https://www.seangoedecke.com/why-output-caching-doesnt-work/">Why output caching doesn't work</a>
+    <p class="why">Sean Goedecke argues output caching saves little, since most LLM output tokens are invisible reasoning and tool calls.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[07]</div>
+  <div>
+    <p class="meta-line">Lenny's Newsletter · Nov 23</p>
+    <a class="headline" href="https://www.lennysnewsletter.com/p/openclaw-for-executives-automate">OpenClaw for executives: Automate every 1% annoyance</a>
+    <p class="why">An executive describes running OpenClaw on a Mac Mini to automate recurring approvals, errands, and small annoyances.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[08]</div>
+  <div>
+    <p class="meta-line">Denver Gazette · Nov 24</p>
+    <a class="headline" href="https://www.denvergazette.com/2026/11/24/denver-puts-40-million-in-redevelopment-funds-behind-dnc-bid/">Denver City Council approves $40 million to back 2028 Democratic National Convention bid</a>
+    <p class="why">Denver City Council voted 9-2 to commit $40 million in downtown redevelopment funds to back its 2028 DNC bid.</p>
+  </div>
+</article>
+
+<article class="row">
+  <div class="idx">[09]</div>
+  <div>
+    <p class="meta-line">Paula Noonan, Colorado Politics · Nov 26</p>
+    <a class="headline" href="https://www.coloradopolitics.com/2026/11/26/twisted-money-talks-in-denver-school-board-divisions-paula-noonan/">Twisted money talks in Denver school board divisions</a>
+    <p class="why">Paula Noonan examines money and governance tensions dividing the Denver Public Schools board.</p>
+  </div>
+</article>
+
+<article class="row wildcard">
+  <div class="idx">[10]</div>
+  <div>
+    <p class="meta-line">Wildcard · Geochemistry · Columbia University via ScienceDaily · Nov 23</p>
+    <a class="headline" href="https://www.sciencedaily.com/releases/2026/11/261123005336.htm">Earth's core may be leaking a 4.5-billion-year-old secret</a>
+    <p class="why">Researchers found an isotopic carbon signature in Hawaiian lava suggesting ancient meteorite carbon is leaking from Earth's core.</p>
+  </div>
+</article>
+
+<footer class="foot">
+  <p>$ next-run --interval daily --at "07:00 MT"</p>
+  <p>$ ls archive/ → <a href="../">past digests</a></p>
+</footer>
+
+</div>
+</body>
+</html>
